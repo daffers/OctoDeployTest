@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Newtonsoft.Json;
 
 namespace HelloOctoDeploy.Controllers
 {
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public ResponseObject Get()
         {
-            return new string[] { "value1", "value2" };
+            var appSettings = ConfigurationManager.AppSettings.Get("DeployedVersion");
+            return new ResponseObject() { BuildNumber = appSettings };
         }
 
         // GET api/values/5
@@ -35,5 +38,11 @@ namespace HelloOctoDeploy.Controllers
         public void Delete(int id)
         {
         }
+    }
+
+    public class ResponseObject
+    {
+        [JsonProperty("buildNumber")]
+        public string BuildNumber { get; set; }
     }
 }

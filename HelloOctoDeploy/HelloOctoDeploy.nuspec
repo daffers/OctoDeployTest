@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>HelloOctoDeploy</id>
+    <title>Sample application for testing octopus deploy and packaging</title>
+    <version>1.0.0</version>
+    <authors>Dafydd</authors>
+    <owners>Team Octomation</owners>
+    <licenseUrl>http://samwong.hk</licenseUrl>
+    <projectUrl>http://samwong.hk</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An MVC and WebApi project</description>
+    <releaseNotes></releaseNotes>
+  </metadata>
+</package>
